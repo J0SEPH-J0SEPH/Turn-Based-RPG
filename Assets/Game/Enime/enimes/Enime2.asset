@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf8e15302a249f4fa89586ccee640eb, type: 3}
+  m_Name: Enime2
+  m_EditorClassIdentifier: 
+  EnemyStats:
+    PlayerController: {fileID: 0}
+    EnimeController: {fileID: 11400000}
+    Player: 0
+    speed: 124
+    health: 100
+    maxHealth: 100
+    Defence: 0
+    damage: 0
+    critchance: 0
+    luck: 0
+    magic: 0
+    speedBuff: 0
+    DefenceBuff: 0
+    damageBuff: 0
+    critchanceBuff: 0
+    magicBuff: 0
+  Modle: {fileID: 1181369813407732253, guid: b3eb5cc860f50ae47b0e8ce8a1097c10, type: 3}
