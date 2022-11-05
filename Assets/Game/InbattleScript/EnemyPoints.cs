@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [CreateAssetMenu(menuName = "EnimeProfile")]
-public class EnimePoints : ScriptableObject
+public class EnemyPoints : ScriptableObject
 {
-
     public Stats EnemyStats;
-
-    public GameObject Modle;
-
+    public GameObject Model;
 }

@@ -1,10 +1,8 @@
-﻿
-
-[System.Serializable]
+﻿[System.Serializable]
 public class Stats
 {
     public PlayerPoints PlayerController;
-    public EnimePoints EnimeController;
+    public EnemyPoints EnimeController;
  
     public bool Player;
     public float speed;
@@ -15,7 +13,6 @@ public class Stats
     public float critchance;
     public float luck;
     public float magic;
-
     public float speedBuff;
     public float DefenceBuff;
     public float damageBuff;
@@ -37,7 +34,5 @@ public class Stats
         damageBuff = dmb;
         critchanceBuff = crtb;
         magicBuff = mb;
-
     }
-
 }

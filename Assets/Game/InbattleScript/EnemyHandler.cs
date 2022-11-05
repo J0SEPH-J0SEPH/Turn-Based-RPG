@@ -2,65 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnimeHandeler : MonoBehaviour
+public class EnemyHandler : MonoBehaviour
 {
-
     [Header ("Constants")]
-
-    public List<EnimeScript> eniemeStats = new List<EnimeScript>();
-
-    public static EnimeHandeler instance;
-
+    public List<EnemyScript> EnemyStats = new List<EnemyScript>();
+    public static EnemyHandler instance;
     public List<Transform> spawnPoints = new List<Transform>();
-
-    public EnimeScript[] ActiveSpaces;
-
+    public EnemyScript[] ActiveSpaces;
     [Header("modifiable")]
-
     public int maxenimeCount = 6;
-
-    public List<EnimePoints> enimeTypes = new List<EnimePoints>();
-
-  
+    public List<EnemyPoints> enimeTypes = new List<EnemyPoints>();
 
     void Awake()
     {
         instance = this;
-
         SpawnEnimes();
     }
 
     void SpawnEnimes()
     {
-
-        float AmountofEnimes = 0;
-
+        float AmountofEnemys = 0;
         for (int i = 0; i < spawnPoints.Count; i++)
         {
-            int canspawnEnime = Random.Range(0, 10);
-
-            int EnimeType = Random.Range(0, enimeTypes.Count);
-            if (AmountofEnimes < maxenimeCount)
+            int canspawnEnemy = Random.Range(0,10);
+            int EnimeType = Random.Range(0,enimeTypes.Count);
+            if (AmountofEnemys < maxenimeCount)
             {
-                if (canspawnEnime > 5 || i == spawnPoints.Count - 1 && AmountofEnimes == 0)
+                if (canspawnEnemy > 5 || i == spawnPoints.Count - 1 && AmountofEnemys == 0)
                 {
- 
-                    GameObject Enime =  Instantiate(enimeTypes[EnimeType].Modle, spawnPoints[i].transform.position, transform.rotation, transform);
-
-                    EnimeScript EM =  Enime.GetComponent<EnimeScript>();
-
-                    EM.enimePoints = enimeTypes[EnimeType];
-
+                    GameObject Enime =  Instantiate(enimeTypes[EnimeType].Model, spawnPoints[i].transform.position, transform.rotation, transform);
+                    EnemyScript EM =  Enime.GetComponent<EnemyScript>();
+                    EM.EnemyPoints = enimeTypes[EnimeType];
                     Stats em = enimeTypes[EnimeType].EnemyStats;
-
                     EM.stats = new Stats(em.speed,em.health,em.maxHealth,em.Defence,em.damage,em.critchance,em.luck,em.magic,em.speedBuff,em.DefenceBuff,em.damageBuff,em.critchanceBuff,em.magicBuff);
-
-                    eniemeStats.Add(EM);
-
-                    AmountofEnimes += 1;
-
+                    EnemyStats.Add(EM);
+                    AmountofEnemys += 1;
                     ActiveSpaces[i] = EM;
-
                     EM.Pos = i;
                 }
                 else
@@ -72,14 +49,11 @@ public class EnimeHandeler : MonoBehaviour
             {
                 return;
             }
-            
         }
     }
 
-
     void PickEnimeAttacks()
     {
-
-
+        //incomplete
     }
 }

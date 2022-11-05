@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnimeScript : MonoBehaviour
+public class EnemyScript : MonoBehaviour
 {
 
-    public EnimePoints enimePoints;
-
+    public EnemyPoints EnemyPoints;
     public Stats stats;
-
     public int Pos;
-
 
     public GameObject UI;
     public Vector3 height;
@@ -21,15 +18,11 @@ public class EnimeScript : MonoBehaviour
     {
         GameObject GM = Instantiate(UI, transform.position + height, transform.rotation, transform);
         HealthBar = GM.transform.GetChild(0);
-
     }
-
-
 
     public void Attacked(float Damage)
     {
         stats.health -= Damage;
-
         float HealthScale = stats.health / stats.maxHealth;
         if(HealthScale < 0)
         {
@@ -44,9 +37,8 @@ public class EnimeScript : MonoBehaviour
 
     void Dead()
     {
-        EnimeHandeler.instance.ActiveSpaces[Pos] = null;
-        EnimeHandeler.instance.eniemeStats.Remove(this); 
+        EnemyHandler.instance.ActiveSpaces[Pos] = null;
+        EnemyHandler.instance.EnemyStats.Remove(this); 
         Destroy(gameObject);
-
     }
 }

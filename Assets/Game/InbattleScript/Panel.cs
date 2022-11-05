@@ -5,16 +5,13 @@ using UnityEngine;
 public class Panel : MonoBehaviour
 {
     public PlayerPoints playerInfo;
-
     public BottomPanelAttacks PanelSettings;
-
 
     public void Start()
     {
         playerInfo.AttackChoice = 0;
         playerInfo.EnimeToAttack = 0;
     }
-
 
     public void AttackChoice()
     {
@@ -31,7 +28,6 @@ public class Panel : MonoBehaviour
         }
     }
 
-
     public void DefenceChoice()
     {
         if (playerInfo.AttackChoice != 0)
@@ -46,7 +42,4 @@ public class Panel : MonoBehaviour
             PanelSettings.CheckifReady();
         }
     }
-
-
-
 }

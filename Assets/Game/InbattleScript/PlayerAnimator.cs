@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-
     public BattleScript battleScript;
-
     public PlayerPoints player;
     public Animator anim;
-    public EnimeScript Target;
-
-  
-
+    public EnemyScript Target;
 
     public void DoAttack()
     {
@@ -21,16 +16,12 @@ public class PlayerAnimator : MonoBehaviour
 
     void HitEnime()
     {
-
         Target.Attacked(player.PlayerStats.damage);
     }
 
     void DoneAttack()
     {
         anim.SetBool("Attack", false);
-
         battleScript.NextTurn();
-
     }
-
 }
